@@ -3,31 +3,34 @@
     static async Task Main(string[] args)
     {
         Console.WriteLine("Main thread started");
-        await DownloadTask1();
-        await Task.WhenAll(DownloadTask2(), DownloadTask3(), DownloadTask1());
-        await Task.WhenAny(DownloadTask2(), DownloadTask3(), DownloadTask1());
+        var task1 = DownloadTask1(20);
+        var task2 = DownloadTask2(10);
+        var task3 = DownloadTask3(5);
+
+        await Task.WhenAll(task1, task2, task3);
+        await Task.WhenAny(task1, task2, task3);
+
         Console.WriteLine("Main thread completed");
     }
 
-    private static Task DownloadTask1()
+    private static async Task<int> DownloadTask1(int seconds)
     {
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(seconds));
         Console.WriteLine("DownloadTask1 completed");
-        return Task.CompletedTask;
+        return seconds;
     }
-    
-    private static Task DownloadTask2()
+
+    private static async Task<int> DownloadTask2(int seconds)
     {
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(seconds));
         Console.WriteLine("DownloadTask2 completed");
-        return Task.CompletedTask;
+        return seconds;
     }
-    
-    private static Task DownloadTask3()
+
+    private static async Task<int> DownloadTask3(int seconds)
     {
-        Thread.Sleep(5000);
+        await Task.Delay(TimeSpan.FromSeconds(seconds));
         Console.WriteLine("DownloadTask3 completed");
-        return Task.CompletedTask;
+        return seconds;
     }
 }
-
