@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadingPlay", "ThreadingPlay\ThreadingPlay.csproj", "{4B30E49C-7A4E-41EC-BD50-6ECE8814FF37}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadLock", "ThreadLock\ThreadLock.csproj", "{59B31416-AEF7-4170-81D0-8C3546AA4F0E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{4B30E49C-7A4E-41EC-BD50-6ECE8814FF37}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4B30E49C-7A4E-41EC-BD50-6ECE8814FF37}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4B30E49C-7A4E-41EC-BD50-6ECE8814FF37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B31416-AEF7-4170-81D0-8C3546AA4F0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B31416-AEF7-4170-81D0-8C3546AA4F0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B31416-AEF7-4170-81D0-8C3546AA4F0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B31416-AEF7-4170-81D0-8C3546AA4F0E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

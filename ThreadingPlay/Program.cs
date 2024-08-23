@@ -1,4 +1,6 @@
-﻿class Program
+﻿namespace ThreadingPlay;
+
+class Program
 {
     static async Task Main(string[] args)
     {
