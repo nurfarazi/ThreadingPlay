@@ -31,7 +31,7 @@ class Product
     public string? Name { get; set; }
     private int StockQuantity { get; set; }
     
-    private readonly object _stockLock = new object(); // Lock for synchronizing stock updates
+    private readonly object _stockLock = new(); // Lock for synchronizing stock updates
 
     public void AddStock(int quantity)
     {
@@ -49,21 +49,19 @@ class Product
         }
     }
     
-    public bool Purchase(int quantity)
+    public void Purchase(int quantity)
     {
-        lock (_stockLock) 
+        lock (_stockLock)
         {
             if (StockQuantity >= quantity)
             {
                 StockQuantity -= quantity;
                 Console.WriteLine("Purchase successful");
-                return true; // Purchase successful
+
+                return;
             }
-            else
-            {
-                Console.WriteLine("Not enough stocks");
-                return false; // Not enough stocks
-            }
+
+            Console.WriteLine("Not enough stocks");
         }
     }
 }
